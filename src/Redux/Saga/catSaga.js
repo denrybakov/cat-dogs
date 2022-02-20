@@ -20,7 +20,7 @@ function* getCatImgSagaWorker({ payload }) {
     const catImg = yield call(fetchGetCatImg, payload)
     yield put(getCatImg(catImg))
   } catch (err) {
-    yield put(getCatImg({ image: 'С кошаком что-то не так! Походу псина его испугала и он убежал' }))
+    yield put(getCatImg({ image: 'Error' }))
   }
 }
 
@@ -29,7 +29,7 @@ function* likeCatSagaWorker({ payload }) {
     const favoriteCat = yield call(fetchLikeCat, payload)
     yield put(likeCat(favoriteCat))
   } catch (err) {
-    yield put(likeCat({ image: 'У кошака определенно проблемы' }))
+    yield put(likeCat({ image: 'Error' }))
   }
 }
 
@@ -38,7 +38,7 @@ function* dislikeCatSagaWorker({ payload }) {
     const disCat = yield call(fetchDislikeCat, payload)
     yield put(dislikeCat(disCat))
   } catch (err) {
-    yield put(dislikeCat({ image: 'Чудной кошак. Вечно с ним проблемы' }))
+    yield put(dislikeCat({ image: 'Error' }))
   }
 }
 
